@@ -2,6 +2,10 @@ window.onload = applyMod;
 window.onafterupdate = applyMod;
 window.ontransitionend = applyMod;
 window.onclick = applyMod;
+window.onmessage = applyMod;
+window.onafterprint = applyMod;
+window.onpageshow = applyMod;
+window.onmousemove = applyMod;
 
 var applied = false
 
