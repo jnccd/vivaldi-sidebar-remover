@@ -40,7 +40,7 @@ for %%i in (%installPaths%) do (
 			echo Backup is already in place.
 		) else (
 			echo Creating a backup of your original browser.html file.
-			rename "!latestVersionFolder!\browser.html" "browser.bak.html"
+			copy "!latestVersionFolder!\browser.html" "!latestVersionFolder!\browser.bak.html"
 		)
 		echo.
 
@@ -58,4 +58,5 @@ for %%i in (%installPaths%) do (
 
 echo All done^^! :)
 echo Successfully patched %nrOfSuccessfulPatches% out of %nrOfInstalls% installs.
+echo Dont forget to add `<script src="custom.js"></script>` to the browser.html 
 echo.
