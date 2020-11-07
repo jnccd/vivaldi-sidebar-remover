@@ -59,3 +59,4 @@ for %%i in (%installPaths%) do (
 echo All done^^! :)
 echo Successfully patched %nrOfSuccessfulPatches% out of %nrOfInstalls% installs.
 echo.
+pause

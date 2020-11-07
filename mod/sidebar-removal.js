@@ -13,14 +13,15 @@ function applyMod() {
     if (applied)
         return;
 
-    var ubar = document.getElementsByClassName('button-toolbar button-circularimage')[0];
-    var sw = document.getElementById('switch');
-
     // Skip if browser didn't load yet
-    if (!document.body.contains(sw) || !document.body.contains(ubar))
+    if (!document.body.contains(document.getElementById('switch')) || 
+        !document.body.contains(document.getElementsByClassName('button-toolbar button-circularimage')[0]))
         return;
     
     // --- Core script ---------------------------------------------------------------------
+    
+    var ubar = document.getElementsByClassName('button-toolbar button-circularimage')[0];
+    var sw = document.getElementById('switch');
 
     while (sw.childElementCount > 2) {
         var curChild = sw.children[0]
@@ -30,10 +31,14 @@ function applyMod() {
 
     var pan = document.getElementById('panels')
     var cont = document.getElementById('panels-container')
+    var gr = document.getElementsByClassName('panel-group')[0]
 
     pan.removeChild(sw)
     cont.style.width = 0
-    pan.children[0].style.right = 0
+    gr.style.right = 0
+    
+    cont.ontransitionend = function() { gr.style.right = 0 }
+
     // --- Core script ---------------------------------------------------------------------
     
     applied = true;
