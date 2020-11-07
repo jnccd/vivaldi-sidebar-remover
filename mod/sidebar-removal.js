@@ -35,9 +35,14 @@ function applyMod() {
 
     pan.removeChild(sw)
     cont.style.width = 0
-    gr.style.right = 0
+    gr.style.right = 0 
     
-    cont.ontransitionend = function() { gr.style.right = 0 }
+    cont.ontransitionend = function() { 
+        cont.style.width = 0
+        gr.style.right = 0 
+        var left = parseInt(cont.children[1].style.left,10);
+        cont.children[1].style.left = left + 34
+    }
 
     // --- Core script ---------------------------------------------------------------------
     
