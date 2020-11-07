@@ -7,7 +7,7 @@
 setlocal enabledelayedexpansion
 
 :: This is the folder that contains your modded files (make sure it uses similar folder structure):
-set "modFolder=."
+set "modFolder=mod"
 :: This is a list of your Vivaldi installations' Application folders (you can use the Vivaldi folder, too, but it takes longer to find the file):
 set installPaths="%userprofile%\AppData\Local\Vivaldi\Application\" "%userprofile%\Test\Snapshot\Application\"
 
@@ -48,7 +48,7 @@ for %%i in (%installPaths%) do (
 		echo    from %modFolder%
 		echo    into !latestVersionFolder!:
 
-		xcopy /s /y /exclude:excludelist.txt "%modFolder%" "!latestVersionFolder!"
+		xcopy /s /y /exclude:mod\excludelist.txt "%modFolder%" "!latestVersionFolder!"
 
 		echo.
 

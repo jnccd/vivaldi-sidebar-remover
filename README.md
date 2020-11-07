@@ -12,7 +12,7 @@ Like this
 
 #### Windows
 
-Execute the `apply-mod.bat` in the `mod` folder.
+Execute `apply-mod.bat`.
 
 #### Linux
 
