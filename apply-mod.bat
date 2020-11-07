@@ -48,7 +48,7 @@ for %%i in (%installPaths%) do (
 		echo    from %modFolder%
 		echo    into !latestVersionFolder!:
 
-		xcopy /s /y /exclude:mod\excludelist.txt "%modFolder%" "!latestVersionFolder!"
+		xcopy /s /y "%modFolder%" "!latestVersionFolder!"
 
 		echo.
 
