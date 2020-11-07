@@ -48,7 +48,7 @@ for %%i in (%installPaths%) do (
 		echo    from %modFolder%
 		echo    into !latestVersionFolder!:
 
-		xcopy /s /y "%modFolder%" "!latestVersionFolder!"
+		xcopy /s /y /exclude:excludelist.txt "%modFolder%" "!latestVersionFolder!"
 
 		echo.
 
@@ -58,5 +58,4 @@ for %%i in (%installPaths%) do (
 
 echo All done^^! :)
 echo Successfully patched %nrOfSuccessfulPatches% out of %nrOfInstalls% installs.
-echo Dont forget to add `<script src="custom.js"></script>` to the browser.html 
 echo.
