@@ -13,15 +13,14 @@ function applyMod() {
     if (applied)
         return;
 
+    var ubar = document.getElementsByClassName('button-toolbar button-circularimage')[0];
+    var sw = document.getElementById('switch');
+
     // Skip if browser didn't load yet
-    if (!document.body.contains(document.getElementById('switch')))
+    if (!document.body.contains(sw) || !document.body.contains(ubar))
         return;
     
     // --- Core script ---------------------------------------------------------------------
-    var bookmarkBar = document.getElementsByClassName('observer')[1];
-
-    var ubar = document.getElementsByClassName('button-toolbar button-circularimage')[0];
-    var sw = document.getElementById('switch');
 
     while (sw.childElementCount > 2) {
         var curChild = sw.children[0]
